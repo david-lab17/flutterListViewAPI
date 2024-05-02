@@ -10,6 +10,7 @@ Future <List<Data>> fetchData() async {
 
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
+    
     return jsonResponse.map((data) => new Data.fromJson(data)).toList();
   } else {
     throw Exception('Failed to Fetch Data!');
